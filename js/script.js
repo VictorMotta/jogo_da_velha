@@ -4,7 +4,11 @@ let boxes = document.querySelectorAll(".box");
 let buttons = document.querySelectorAll("#buttons-container button");
 let messageContainer = document.querySelector("#message");
 let messageText = document.querySelector("#message p");
+let refresh = document.querySelector("#button-return");
+let refreshButton = document.querySelector("#button-return button");
 let secondPlayer;
+
+
 
 // contador de jogadas
 let player1 = 0;
@@ -53,6 +57,7 @@ for (let i = 0; i < boxes.length; i++){
 
 }
 
+
 //CONFIGURAÇÃO DO JOGO
 // evento para saber se é 2 player ou IA
 
@@ -70,14 +75,21 @@ for (let i = 0; i < buttons.length; i++){
 
             let container = document. querySelector("#container");
             container.classList.remove("hide");
+            refresh.classList.remove("hide");
 
         }, 500);
+
 
     });
 
 }
 
 
+refreshButton.addEventListener("click", function(){
+
+    location.reload();
+
+});
 
 // ve quem vai jogar
 function checkEl(player1, player2){
@@ -337,3 +349,4 @@ function computerPlayer() {
 
 
 }
+
